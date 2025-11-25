@@ -3,38 +3,96 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PaperBootstrap 配置生成器</title>
+    <title>将进酒 - 豪迈气势版</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        body { font-family: 'Inter', system-ui, -apple-system, sans-serif; }
+        /* 引入一个有力量感的字体（如果用户系统中有楷体或行书字体，效果更佳） */
+        @import url('https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&display=swap');
         
-        /* 
-           重点修改在这里：
-           1. 输入框背景改为 #1a1a1a (深灰)，不刺眼但清晰可见。
-           2. 聚焦时变为 #252525 (稍微亮一点的灰)。
-        */
-        .input-box {
-            @apply w-full bg-[#1a1a1a] border border-transparent rounded text-gray-300 text-sm px-4 py-3 
-            focus:outline-none focus:bg-[#252525] focus:ring-1 focus:ring-gray-600 transition-all placeholder-gray-600;
-        }
-
-        /* 标签颜色调暗，不抢眼 */
-        .input-label {
-            @apply block text-[11px] font-bold text-gray-500 uppercase tracking-wider mb-1.5 ml-1;
-        }
-
-        /* 区域分割线 */
-        .section-header {
-            @apply flex items-center gap-2 text-sm font-semibold text-gray-400 border-b border-[#222] pb-2 mb-4 mt-2;
+        body { 
+            font-family: 'Ma Shan Zheng', 'KaiTi', serif; 
+            background-color: #000;
+            color: #ccc;
+            /* 背景图：微弱的深红色渐变，模拟酒后的豪情与夜色 */
+            background-image: linear-gradient(to top, #0a0000 0%, #1a0000 50%, #000000 100%);
         }
         
-        /* 高亮文字 */
-        .hl { @apply text-blue-500; }
+        /* 气势标题 */
+        .poem-title {
+            font-family: 'KaiTi', serif; 
+            letter-spacing: 0.2em;
+        }
+
+        /* 诗歌主体内容 */
+        .poem-content {
+            line-height: 2.8; /* 增加行间距 */
+            font-size: 1.3rem; /* 字体加大 */
+            font-weight: 500;
+        }
+
+        /* 奔流动画效果（模拟黄河奔流） */
+        @keyframes flowing {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .flowing-border {
+            /* 模拟流动的水/酒液效果 */
+            background: linear-gradient(90deg, #b8860b 0%, #ffc400 25%, #b8860b 50%, #ffc400 75%, #b8860b 100%);
+            background-size: 400% 400%;
+            animation: flowing 15s ease infinite;
+        }
+        
+        /* 标题下方的流动下划线 */
+        .header-line {
+            height: 3px;
+            width: 100%;
+            margin-top: 1rem;
+        }
     </style>
 </head>
-<body class="bg-black text-gray-400 min-h-screen flex items-center justify-center p-4">
+<body class="p-4 md:p-12">
 
-    <div class="w-full max-w-6xl bg-[#0a0a0a] border border-[#222] rounded-lg shadow-2xl">
+    <div class="max-w-4xl mx-auto bg-[#0a0a0a] shadow-2xl p-6 md:p-16 rounded-xl border border-[#303030]">
+        
+        <!-- 标题区域 -->
+        <header class="text-center mb-10">
+            <h1 class="poem-title text-5xl md:text-6xl font-extrabold text-[#FFD700] drop-shadow-lg leading-tight">
+                将进酒
+            </h1>
+            <p class="text-2xl text-gray-500 mt-2">（唐）李白</p>
+            <!-- 豪迈的流动分割线 -->
+            <div class="header-line flowing-border mx-auto rounded-full"></div>
+        </header>
+
+        <!-- 诗歌内容：核心突出气势 -->
+        <main class="poem-content text-center text-gray-300">
+            <p class="text-[#FFC400] font-bold">君不见，黄河之水天上来，奔流到海不复回。</p>
+            <p>君不见，高堂明镜悲白发，朝如青丝暮成雪。</p>
+            <p class="text-[#f5f5dc] text-lg mt-8 mb-8">人生得意须尽欢，莫使金樽空对月。</p>
+            <p class="text-green-500 text-xl font-bold">天生我材必有用，千金散尽还复来。</p>
+            <p>烹羊宰牛且为乐，会须一饮三百杯。</p>
+            <p class="mt-8 mb-8">岑夫子，丹丘生，将进酒，君莫停。</p>
+            <p>与君歌一曲，请君为我倾耳听。</p>
+            <p>钟鼓馔玉不足贵，但愿长醉不复醒。</p>
+            <p class="text-red-700/80 font-bold">古来圣贤皆寂寞，惟有饮者留其名。</p>
+            <p>陈王昔时宴平乐，斗酒十千恣欢谑。</p>
+            <p>主人何为言少钱，径须沽取对君酌。</p>
+            <!-- 最后的总结句，用最豪迈的颜色 -->
+            <p class="text-3xl text-yellow-600 font-extrabold mt-12">
+                五花马、千金裘，<br>呼儿将出换美酒，与尔同销万古愁。
+            </p>
+        </main>
+
+        <!-- 底部落款 -->
+        <footer class="text-right mt-16 pt-6 border-t border-[#1a1a1a]">
+            <p class="text-base text-gray-600 tracking-wider">—— 豪迈洒脱 · 气势磅礴 ——</p>
+        </footer>
+    </div>
+
+</body>
+</html>    <div class="w-full max-w-6xl bg-[#0a0a0a] border border-[#222] rounded-lg shadow-2xl">
         
         <!-- Header -->
         <div class="border-b border-[#222] p-6 flex flex-col sm:flex-row justify-between items-end sm:items-center gap-4">
@@ -237,3 +295,4 @@
     </script>
 </body>
 </html>
+
